@@ -1,3 +1,18 @@
-<h1>Data Binding</h1>
+<h1>Angular Stuff</h1>
+<h3>Data Binding</h3>
 <input type="text" [value]="textExample" />
 <button [disabled]="btnDisabled" >Submit</button>
+<hr>
+<h3>Event Binding</h3>
+<h4>Numbers of clicks: {{ count }}</h4>
+<button style="cursor: pointer;" (click)="onClick()" >
+  Click Me!
+</button>
+<button style="cursor: pointer;" (click)="clearCounter()">Clean counter</button>
+<br>
+<p>Your progress is {{ progress }} %</p>
+<progress max="100" [value]="progress"></progress>
+<br>
+<h5>{{ warning }}</h5>
+<button style="cursor: pointer;" (click)="incrementProgress()" >Increment</button>
+
