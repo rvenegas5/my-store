@@ -15,4 +15,16 @@
 <br>
 <h5>{{ warning }}</h5>
 <button style="cursor: pointer;" (click)="incrementProgress()" >Increment</button>
+<br>
+<h5>Scroll position {{ scrollOfDiv }} </h5>
+<div class="box" (scroll)="onScroll($event)" >
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam optio, at minima, sit distinctio nobis qui quam consequatur aspernatur corporis officia, expedita fugiat reiciendis? Quidem ex eius porro blanditiis quam!
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam explicabo earum, id incidunt impedit illum voluptas dolor, facere placeat consequatur sapiente vero obcaecati corrupti assumenda, consectetur in natus veritatis iusto.
+  </p>
+</div>
+<br>
+<h4>Live change string</h4>
+<input type="text" placeholder="Example" (keyup)="changeText($event)"/>
+<p>Value: {{ textInput }}</p>
+
 

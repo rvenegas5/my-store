@@ -12,6 +12,8 @@ export class AppComponent {
   count: number = 0;
   progress: number = 0;
   warning!: string;
+  scrollOfDiv: number = 0;
+  textInput!: string;
 
   onClick(): void {
     this.count = this.count + 1;
@@ -26,5 +28,15 @@ export class AppComponent {
       this.warning = "The max increment is 100%";
     else
       this.progress = this.progress + 2;
+  }
+
+  onScroll(event: Event): void {
+    const element = event.target as HTMLElement; // Target to element div and the behavior is as HTMLElement
+    this.scrollOfDiv = element.scrollTop;
+  }
+
+  changeText(event: Event): void {
+    const element = event.target as HTMLInputElement;
+    this.textInput = element.value;
   }
 }
