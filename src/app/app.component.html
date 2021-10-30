@@ -2,8 +2,24 @@
 <h2>Class & Style</h2>
 <label>Name: </label>
 <input type="text" required #nameInput2=ngModel [(ngModel)]="name" />
-<h4 class="message-error" [class.invalid]="nameInput2.invalid" >The name field is required</h4>
+<h4 class="message-error" [style.font-style]="nameInput2.invalid ? 'italic': 'normal'" [class.invalid]="nameInput2.invalid" >The name field is required</h4>
+
+<div class="container">
+  <div>
+    <label> Height</label><input type="number" [(ngModel)]="heightImage" />
+    <label> Width</label><input type="number" [(ngModel)]="widthImage" />
+    <label> Background</label><input type="color" [(ngModel)]="backgroundImage" />
+  </div>
+  <div [ngStyle]="{
+    'width.px': widthImage,
+    'height.px': heightImage,
+    'background-color': backgroundImage,
+    'display': 'block'
+  }">
+  </div>
+</div>
 <hr>
+
 <h2>Products</h2>
 <div class="container">
   <div class="card" *ngFor="let product of products">

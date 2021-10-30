@@ -7,6 +7,9 @@ import { Product } from './product.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  widthImage: number = 10;
+  heightImage: number = 10;
+  backgroundImage: string = "red";
   title = 'my-store';
   btnDisabled: boolean = false;
   textExample: string = "Example..."
