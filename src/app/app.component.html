@@ -1,8 +1,32 @@
 <h1>Angular Stuff</h1>
+<h2>*ngFor</h2>
+<h5>If you want add a new emoji, you should complete the next input and press the button</h5>
+<input type="text" required [(ngModel)]="emoji">
+<button style="cursor: pointer;" (click)="addEmoji()">Add emoji 😂</button>
+<ul>
+  <li *ngIf="emojis.length === 0">Don't exist any element</li>
+  <li *ngFor="let emoji of emojis; index as i">
+    {{ i + 1 }} {{ emoji }}
+    <button style="cursor: pointer;" (click)="deleteEmoji(i)">Delete</button>
+  </li>
+</ul>
+<hr>
+
+<h3>Data Binding with ngModel</h3>
+<input type="text" required #nameInput="ngModel" [(ngModel)]="textImputNgModule" />
+<br>
+<p>Value: {{ textImputNgModule }} </p>
+<p>Valid: {{ nameInput.valid }} </p>
+<input type="number" max="100" min="0" required #progressInput="ngModel" [(ngModel)]="progress" />
+<p>Valid: {{ progressInput.valid }} </p>
+<br>
+<hr>
+
 <h3>Data Binding</h3>
 <input type="text" [value]="textExample" />
 <button [disabled]="btnDisabled" >Submit</button>
 <hr>
+
 <h3>Event Binding</h3>
 <h4>Numbers of clicks: {{ count }}</h4>
 <button style="cursor: pointer;" (click)="onClick()" >
@@ -13,7 +37,10 @@
 <p>Your progress is {{ progress }} %</p>
 <progress max="100" [value]="progress"></progress>
 <br>
-<h5>{{ warning }}</h5>
+<h5 *ngIf="progress === 100; else elseBlock">{{ warning }}</h5>
+<ng-template #elseBlock>
+  <h5>Your progress is {{ progress }}%</h5>
+</ng-template>
 <button style="cursor: pointer;" (click)="incrementProgress()" >Increment</button>
 <br>
 <h5>Scroll position {{ scrollOfDiv }} </h5>
@@ -26,5 +53,6 @@
 <h4>Live change string</h4>
 <input type="text" placeholder="Example" (keyup)="changeText($event)"/>
 <p>Value: {{ textInput }}</p>
+
 
 

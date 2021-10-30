@@ -11,10 +11,12 @@ export class AppComponent {
   textExample: string = "Example..."
   count: number = 0;
   progress: number = 0;
-  warning!: string;
+  warning:string = "100% is the maximum value";
   scrollOfDiv: number = 0;
   textInput!: string;
-
+  textImputNgModule!: string;
+  emojis: string[] = [ "😂" , "🐦", "🐳","🌮", "💚"];
+  emoji: string = '';
   onClick(): void {
     this.count = this.count + 1;
   }
@@ -24,9 +26,7 @@ export class AppComponent {
   }
 
   incrementProgress(): void {
-    if (this.progress === 100)
-      this.warning = "The max increment is 100%";
-    else
+    if (this.progress < 100)
       this.progress = this.progress + 2;
   }
 
@@ -38,5 +38,15 @@ export class AppComponent {
   changeText(event: Event): void {
     const element = event.target as HTMLInputElement;
     this.textInput = element.value;
+  }
+
+  addEmoji():void {
+    if (this.emoji !== "")
+      this.emojis.push(this.emoji);
+      this.emoji = ""
+  }
+
+  deleteEmoji(index: number):void {
+    this.emojis.splice(index, 1);
   }
 }
