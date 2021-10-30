@@ -18,6 +18,7 @@ export class AppComponent {
   textImputNgModule!: string;
   emojis: string[] = [ "😂" , "🐦", "🐳","🌮", "💚"];
   emoji: string = '';
+  name: string = '';
   // Products
   products: Product[]= [
     {

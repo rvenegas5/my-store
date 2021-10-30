@@ -1,9 +1,17 @@
 <h1>Angular Stuff</h1>
+<h2>Class & Style</h2>
+<label>Name: </label>
+<input type="text" required #nameInput2=ngModel [(ngModel)]="name" />
+<h4 class="message-error" [class.invalid]="nameInput2.invalid" >The name field is required</h4>
+<hr>
+<h2>Products</h2>
 <div class="container">
   <div class="card" *ngFor="let product of products">
-    <h3 class="card-title">{{ product.name }}</h3>
-    <img class="card-image" [src]="product.image" alt="image">
+    <div>
+      <img class="card-image" [src]="product.image" alt="image">
+    </div>
     <h4 class="card-price">$ {{ product.price }}.00</h4>
+    <h3 class="card-title">{{ product.name }}</h3>
   </div>
 </div>
 <h2>*ngFor</h2>
