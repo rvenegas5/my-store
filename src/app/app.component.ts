@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Register } from './interfaces/register';
 import { Product } from './product.model';
 
 @Component({
@@ -7,6 +8,11 @@ import { Product } from './product.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  register: Register = {
+    name: '',
+    email: '',
+    password: ''
+  };
   widthImage: number = 10;
   heightImage: number = 10;
   backgroundImage: string = "red";
@@ -90,5 +96,9 @@ export class AppComponent {
 
   deleteEmoji(index: number):void {
     this.emojis.splice(index, 1);
+  }
+
+  onRegister(): void {
+    console.log(this.register)
   }
 }

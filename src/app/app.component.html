@@ -1,4 +1,25 @@
-<h1>Angular Stuff</h1>
+<h1>Register</h1>
+<form (ngSubmit)="onRegister()" #myForm="ngForm" class="container">
+  <div class="input-group">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" required [(ngModel)]="register.name">
+    <p>Error in the name</p>
+  </div>
+  <div class="input-group">
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" required [(ngModel)]="register.email">
+    <p>Error in the email</p>
+  </div>
+  <div class="input-group">
+    <label for="passwd">Password</label>
+    <input type="password" name="passwd" id="passwd" required [(ngModel)]="register.password">
+    <p>Error in the password</p>
+  </div>
+  <button [disabled]="myForm.invalid" type="submit">Register</button>
+  <button type="button">Action</button>
+</form>
+
+<h1 class="center">Angular Stuff</h1>
 <h2>Class & Style</h2>
 <label>Name: </label>
 <input type="text" required #nameInput2=ngModel [(ngModel)]="name" />
@@ -84,6 +105,4 @@
 <h4>Live change string</h4>
 <input type="text" placeholder="Example" (keyup)="changeText($event)"/>
 <p>Value: {{ textInput }}</p>
-
-
 
