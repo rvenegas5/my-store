@@ -5,8 +5,8 @@
 <!-- Render Images -->
 <label for="img">Enter a image URL: </label>
 <input type="text" id="img" placeholder="Image url" [(ngModel)]="inputParent">
-<app-img [img]="inputParent"></app-img>
-
+<app-img (loaded)="imgLoaded($event)" [img]="inputParent"></app-img>
+<p *ngIf="correctMessage">{{ correctMessage }}</p>
 
 
 

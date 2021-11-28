@@ -9,6 +9,7 @@ import { Product } from './product.model';
 })
 export class AppComponent {
   inputParent!: string;
+  correctMessage!: string;
   register: Register = {
     name: '',
     email: '',
@@ -64,6 +65,10 @@ export class AppComponent {
     }
   ]
 
+  imgLoaded(img: string):void {
+    this.correctMessage = 'The url of the Img is '.concat(img.slice(0,10));
+    console.log(img)
+  }
 
   // Methods
   onClick(): void {
