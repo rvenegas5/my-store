@@ -8,6 +8,7 @@ import { Product } from './product.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  inputParent!: string;
   register: Register = {
     name: '',
     email: '',
