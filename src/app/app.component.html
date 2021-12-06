@@ -7,7 +7,9 @@
 <input type="text" id="img" placeholder="Image url" [(ngModel)]="inputParent">
 <app-img (loaded)="imgLoaded($event)" [img]="inputParent"></app-img>
 <p *ngIf="correctMessage">{{ correctMessage }}</p>
-
+<div class="product" *ngFor="let product of products">
+  <app-product [product]="product"></app-product>
+</div>
 
 
 <!-- <h1>Register</h1>
