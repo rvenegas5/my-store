@@ -5,7 +5,9 @@
 <!-- Render Images -->
 <label for="img">Enter a image URL: </label>
 <input type="text" id="img" placeholder="Image url" [(ngModel)]="inputParent">
-<app-img (loaded)="imgLoaded($event)" [img]="inputParent"></app-img>
+<br>
+<button class="btn" (click)="toogleImg()">Toggle Image</button>
+<app-img *ngIf="toggleImg" (loaded)="imgLoaded($event)" [img]="inputParent"></app-img>
 <p *ngIf="correctMessage">{{ correctMessage }}</p>
 <div class="product" *ngFor="let product of products">
   <app-product [product]="product"></app-product>

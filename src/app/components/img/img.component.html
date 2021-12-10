@@ -1,5 +1,7 @@
 <br>
 <img style="width: 250px;" (load)="onLoad()" (error)="onError()" [src]="img" alt="This is a random image" *ngIf="img || img === ''; else elseImg">
+<h5>{{ counter }}</h5>
 <ng-template #elseImg>
-  <img src="imgDefault" alt="This is a random image">
+  <br>
+  <img [src]="imgDefault" alt="This is a random image">
 </ng-template>
